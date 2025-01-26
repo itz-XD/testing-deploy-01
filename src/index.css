@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gilroy";
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0d1117;
+  color: #0d1117b6;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  padding: 100px 100px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  border: 5px solid royalblue;
+  /* border-bottom: 5px solid royalblue;
+  border-left: 5px solid royalblue;
+  border-right: 5px solid royalblue;
+  border-top: 5px solid royalblue; */
+}
+
+.paper {
+  width: 75%;
+  padding: 10px;
+  /* background-color: #151b23; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+
+.quest {
+  width: 100%;
+  padding: 15px 10px;
+  background-color: #2f3742;
+  position: relative;
+  user-select: none;
+}
+
+.que {
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.ans {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.ans-div {
+  padding: 15px 58px;
+}
+
+.plusMinus {
+  display: inline-block;
+  position: absolute;
+  right: 24px;
+  top: 10px;
+}
+
+.open .num,
+.open .que {
+  color: #087f5b;
+}
+
+/* // 3D effect */
+
+.quest {
+  background-color: #161b22; /* Darker shade for contrast */
+  border: 1px solid #21262d; /* Subtle border */
+  padding: 16px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1),
+    /* Light outer shadow */ 0px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle dark inner shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  color: #c9d1d9; /* Light text for visibility */
+}
+
+.quest:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.151),
+    /* Stronger light shadow */ 0px 2px 4px rgba(0, 0, 0, 0.6); /* Slightly deeper dark shadow */
+}
+
+.quest.open {
+  box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2),
+    /* Highlight when open */ 0px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.ans-div {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #8b949e; /* Softer text color for the answer */
+}
+
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+/* // Responsive part */
+/* For mobile devices (portrait and smaller screens) */
+@media (max-width: 600px) {
+  .main {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid royalblue; /* Re-added border for mobile */
+  }
+}
+
+/* For tablets and landscape phones */
+@media (max-width: 1024px) {
+  .main {
+    padding: 50px 50px;
+    align-items: center;
+    border: 5px solid royalblue; /* Re-added border for tablets */
+  }
+}
+
+/* For mobile devices (portrait and smaller screens) */
+@media (max-width: 600px) {
+  .paper {
+    width: 100%; /* Full width on mobile */
+    padding: 5px;
+  }
+
+  .quest {
+    padding: 12px 8px; /* Adjust padding for better fitting */
+    margin-bottom: 10px; /* Space out the quests slightly */
+  }
+
+  .que {
+    font-size: 18px; /* Adjusted font size for better readability */
+  }
+
+  .ans {
+    font-size: 18px;
+  }
+
+  .ans-div {
+    padding: 12px 35px; /* Adjust padding for smaller screens */
+  }
+
+  .plusMinus {
+    right: 15px; /* Adjust positioning of the plus/minus sign */
+    top: 8px;
+  }
+
+  .open .num,
+  .open .que {
+    font-size: 20px;
+  }
+
+  .ans-div {
+    font-size: 12px; /* Adjust font size of answer */
+  }
+}
+
+/* For tablets and landscape phones */
+@media (max-width: 1024px) {
+  .main {
+    padding: 50px 50px; /* Moderate padding for tablets */
+    align-items: center; /* Ensure content is centered horizontally */
+  }
+
+  .paper {
+    width: 90%; /* Slightly smaller width on tablets */
+  }
+
+  .quest {
+    padding: 14px 10px; /* Adjust padding */
+  }
+
+  .que {
+    font-size: 20px;
+  }
+
+  .ans {
+    font-size: 20px;
+  }
+
+  .ans-div {
+    padding: 14px 45px;
+  }
+}
